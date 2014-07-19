@@ -36,6 +36,7 @@ mvim --version > /dev/null 2>&1
 MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
+  # alias vim="mvim"
 fi
 
 # vimrc editing
@@ -161,3 +162,14 @@ alias grb='git recent-branches'
 # Finder
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Atom Shell
+alias atom-shell='/Applications/atom-shell.app/Contents/MacOS/atom'
+
+# Grunt
+alias gus='gulp serve'
+alias gusd='gulp serve:dist'
+alias gub='gulp build'
+alias gut='gulp test'
+alias gup='gulp protractor'
+alias gupd='gulp protractor:dist'

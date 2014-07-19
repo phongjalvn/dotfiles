@@ -2,6 +2,7 @@
 path=(
   $path
   $HOME/.yadr/bin
+  $HOME/bin
   $HOME/.yadr/bin/yadr
 )
 

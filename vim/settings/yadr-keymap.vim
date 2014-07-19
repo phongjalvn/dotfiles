@@ -13,10 +13,10 @@ nnoremap ,yw yiww
 nnoremap ,ow "_diwhp
 
 "make Y consistent with C and D
-nnoremap Y y$
-function! YRRunAfterMaps()
-  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
-endfunction
+" nnoremap Y y$
+" function! YRRunAfterMaps()
+"   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+" endfunction
 
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
@@ -86,6 +86,8 @@ nnoremap <D-(> f(ci(
 nnoremap <D-)> f)ci)
 nnoremap <D-[> f[ci[
 nnoremap <D-]> f]ci]
+nnoremap <D-{> f{ci{
+nnoremap <D-}> f}ci}
 
 "Go to last edit location with ,.
 nnoremap ,. '.
@@ -102,6 +104,8 @@ imap <C-a> <esc>wa
 " ==== NERD tree
 " Cmd-Shift-N for nerd tree
 nmap <D-N> :NERDTreeToggle<CR>
+" ,n for nerd tree
+nmap ,n :NERDTreeToggle<CR>
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
 
@@ -173,10 +177,10 @@ nnoremap <D-Left> <C-w><
 nnoremap <D-Right>  <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
-imap <silent> <C-K> <%=   %><Esc>3hi
+imap <silent> <C-K> <%  %><Esc>2hi
 
-" create <%= foo %> erb tags using Ctrl-j in edit mode
-imap <silent> <C-J> <%  %><Esc>2hi
+" create {{}} tags using Ctrl-j in edit mode
+imap <silent> <C-J> {{}}<Esc>1hi
 
 " ============================
 " Shortcuts for everyday tasks
@@ -227,4 +231,28 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 map <D-%> :so %<CR>
 
 " ,hp = html preview
-map <silent> ,hp :!open -a Safari %<CR><CR>
+map <silent> ,hp :!open -a Google\ Chrome %<CR><CR>
+
+" JSHint
+nnoremap <silent><F1> :JSHint<CR>
+inoremap <silent><F1> <C-O>:JSHint<CR>
+vnoremap <silent><F1> :JSHint<CR>
+
+" show next jshint error
+nnoremap <silent><F2> :lnext<CR>
+inoremap <silent><F2> <C-O>:lnext<CR>
+vnoremap <silent><F2> :lnext<CR>
+
+" show previous jshint error
+nnoremap <silent><F3> :lprevious<CR>
+inoremap <silent><F3> <C-O>:lprevious<CR>
+vnoremap <silent><F3> :lprevious<CR>
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" Save with :W
+nnoremap :W :write
+
+" Undo tree
+nnoremap <F5> :UndotreeToggle<cr>
