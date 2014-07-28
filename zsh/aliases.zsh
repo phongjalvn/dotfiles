@@ -173,3 +173,20 @@ alias gub='gulp build'
 alias gut='gulp test'
 alias gup='gulp protractor'
 alias gupd='gulp protractor:dist'
+
+# NPM
+alias npmid='npm i --save-dev'
+alias npmud='npm un --save-dev'
+alias npmig='npm i -g'
+alias npmcu='npm-check-updates'
+alias npmcuu='npm-check-updates -u'
+
+# Homebrew
+alias br="brew"
+alias brs="brew search"
+alias bri="brew install"
+alias bru="brew uninstall"
+alias bcr="brew cask"
+alias bcrs="brew cask search"
+alias bcri="brew cask install"
+alias bcru="brew cask uninstall"

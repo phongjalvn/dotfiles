@@ -30,3 +30,5 @@ endif
 
 colorscheme solarized
 set background=dark
+
+autocmd FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors

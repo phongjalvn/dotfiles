@@ -13,10 +13,10 @@ nnoremap ,yw yiww
 nnoremap ,ow "_diwhp
 
 "make Y consistent with C and D
-" nnoremap Y y$
-" function! YRRunAfterMaps()
-"   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
-" endfunction
+nnoremap Y y$
+function! YRRunAfterMaps()
+  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
 
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
@@ -252,7 +252,17 @@ vnoremap <silent><F3> :lprevious<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Save with :W
-nnoremap :W :write
+nnoremap :W :w
+nnoremap :Q :q
 
-" Undo tree
-nnoremap <F5> :UndotreeToggle<cr>
+" JS Beautify
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
