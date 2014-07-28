@@ -9,7 +9,7 @@ if has("gui_running")
   " (the numbers don't show up) so I made it a VimEnter event
   autocmd VimEnter * set guitablabel=%N:\ %t\ %M
 
-  set lines=60
+  set lines=70
   set columns=190
 
   if has("gui_gtk2")
