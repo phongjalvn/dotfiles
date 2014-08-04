@@ -10,7 +10,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#max_list = 20
 
 " Set minimum syntax keyword length.
-let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#auto_completion_start_length = 2
 
 " Map standard Ctrl-N completion to Cmd-Space
 inoremap <D-Space> <C-n>
@@ -26,7 +26,7 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
